@@ -12,11 +12,7 @@ price = soup.find(class_='price-tag-fraction')
 price_conv =int(price.string)
 print(price_conv)
 
-if price_conv < 100:
-    print("preço abaixo")
-else:
-    pass
-
+def email_sender()
 
 def price_checker():
     if price_conv < 100:
