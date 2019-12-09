@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import time
 import smtplib
+import tkinter as tk
+from tkinter import messagebox
+from db import Database
 
 page = requests.get('https://produto.mercadolivre.com.br/MLB-698976428-peruca-cosplay-branca-prata-prontaentrega-_JM')
 
@@ -60,3 +63,36 @@ price = soup.find(class_='price-tag-fraction')
 price_conv =int(price.string)
 print(price_conv)
 '''
+
+
+import tkinter as tk
+from tkinter import messagebox
+from db import Database
+
+class Application(tk.Frame):
+    def __init__(self,master):
+        super().__init__(master)
+        self.master = master
+        master.title('Mercado Livre Scrapper')
+        master.geometry("700x350")
+        self.create_widgets()
+        self.populate_list()
+
+    def create_widgets(self):
+        self.link_text = tk.StringVar()
+        self.link_label = tk.Label(
+            self.master, text='Link',font=('bold',14),pady=20)
+        self.link_label.grid(row=0,column=0,sticky=tk.W)
+        self.link_entry = tk.Entry(self.master, textvariable=self.link_text)
+        self.link_entry.grid(row=0,column=1)
+        self.parts_list = tk.Listbox(self.master, height=8, width=50, border=0)
+        self.parts_list.grid(row=1, column=3)
+        
+    def get_info():
+        pass
+
+root = tk.Tk()
+app.Application(master=root)
+app.mainloop()
+
+
