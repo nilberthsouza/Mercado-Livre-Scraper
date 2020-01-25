@@ -52,19 +52,6 @@ def email_sender():
     server.sendmail(mail_from, mail_to, mail_subject, mail_message)
     server.quit()
 
-
-'''
-soup = BeautifulSoup(page.text, 'html.parser')
-title = soup.find(class_='item-title__primary')
-print(title.string)
-
-soup = BeautifulSoup(page.text,'html.parser')
-price = soup.find(class_='price-tag-fraction')
-price_conv =int(price.string)
-print(price_conv)
-'''
-
-
 import tkinter as tk
 from tkinter import messagebox
 from db import Database
@@ -94,5 +81,3 @@ class Application(tk.Frame):
 root = tk.Tk()
 app.Application(master=root)
 app.mainloop()
-
-
