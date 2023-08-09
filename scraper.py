@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import messagebox
 from db import Database
 
-page = requests.get('https://produto.mercadolivre.com.br/MLB-698976428-peruca-cosplay-branca-prata-prontaentrega-_JM')
+page = requests.get('linkdoproduto')
 
 def get_info(in_value):
     soup = BeautifulSoup(page.text, 'html.parser')
